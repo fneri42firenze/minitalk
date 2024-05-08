@@ -6,7 +6,7 @@
 #    By: filippo <filippo@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/08 00:27:44 by filippo           #+#    #+#              #
-#    Updated: 2024/05/08 02:40:46 by filippo          ###   ########.fr        #
+#    Updated: 2024/05/08 03:15:01 by filippo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ $(LIBFT):
 
 clean:
 	$(MAKE) clean -C libft_extended
-	rm -f $(OBJ)
+	rm -f $(OBJ) server.o client.o
 
 fclean: clean
 	$(MAKE) fclean -C libft_extended

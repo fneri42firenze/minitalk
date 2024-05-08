@@ -6,7 +6,7 @@
 /*   By: filippo <filippo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 00:29:11 by filippo           #+#    #+#             */
-/*   Updated: 2024/05/08 03:07:34 by filippo          ###   ########.fr       */
+/*   Updated: 2024/05/08 03:13:27 by filippo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	sig_handler_client(int signum, siginfo_t *info, void *context)
 	(void)context;
 	(void)info;
 	(void)signum;
-	recived = 1;
+	g_recived = 1;
 	if (signum == SIGUSR1)
 		ft_putendl_fd("Message correctly g_received by the server!", 1);
 	else if (signum == SIGUSR2)
@@ -43,7 +43,7 @@ int	conv_char_to_bin(char character, int pid)
 			kill(pid, SIGUSR1);
 		else
 			kill(pid, SIGUSR2);
-		while (recived == 0)
+		while (g_recived == 0)
 		{
 			if (i == 50)
 			{
@@ -53,7 +53,7 @@ int	conv_char_to_bin(char character, int pid)
 			i++;
 			usleep(100);
 		}
-		recived = 0;
+		g_recived = 0;
 		byte--;
 	}
 	return (0);
