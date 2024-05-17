@@ -23,7 +23,7 @@ void	sig_handler_client(int signum, siginfo_t *info, void *context)
 	(void)signum;
 	g_recived = 1;
 	if (signum == SIGUSR1)
-		ft_putendl_fd("Message correctly g_received by the server!", 1);
+		ft_putendl_fd("Message correctly received by the server!", 1);
 	else if (signum == SIGUSR2)
 	{
 		byte++;
@@ -67,7 +67,7 @@ int	main(int argc, char **argv)
 
 	if (argc != 3)
 	{
-		ft_putendl_fd("Usage: ./server PID MESSAGE(between quotes)", 1);
+		ft_putendl_fd(" USAGE: ./server PID MESSAGE(between quotes)", 1);
 		return (1);
 	}
 	byte = 0;
