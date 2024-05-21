@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: filippo <filippo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fneri <fneri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 00:29:11 by filippo           #+#    #+#             */
-/*   Updated: 2024/05/08 03:13:27 by filippo          ###   ########.fr       */
+/*   Updated: 2024/05/21 14:47:53 by fneri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,13 +65,13 @@ int	main(int argc, char **argv)
 	int					byte;
 	int					pid;
 
-	if (argc != 3)
-	{
-		ft_putendl_fd(" USAGE: ./server PID MESSAGE(between quotes)", 1);
-		return (1);
-	}
 	byte = 0;
 	pid = ft_atoi(argv[1]);
+	if (argc != 3 || pid <= 0)
+	{
+		ft_putendl_fd(" INVALID PID or USAGE,use: ./server PID MESSAGE", 1);
+		return (1);
+	}
 	sigemptyset(&sig.sa_mask);
 	sig.sa_flags = SA_RESTART | SA_SIGINFO;
 	sig.sa_sigaction = sig_handler_client;
