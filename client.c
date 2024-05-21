@@ -6,7 +6,7 @@
 /*   By: fneri <fneri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 00:29:11 by filippo           #+#    #+#             */
-/*   Updated: 2024/05/21 14:47:53 by fneri            ###   ########.fr       */
+/*   Updated: 2024/05/21 15:26:33 by fneri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	conv_char_to_bin(char character, int pid)
 				exit (1);
 			}
 			i++;
-			usleep(100);
+			usleep(1);
 		}
 		g_recived = 0;
 		byte--;

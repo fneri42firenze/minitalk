@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: filippo <filippo@student.42.fr>            +#+  +:+       +#+        */
+/*   By: fneri <fneri@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 20:32:55 by fneri             #+#    #+#             */
-/*   Updated: 2024/05/07 00:56:20 by filippo          ###   ########.fr       */
+/*   Updated: 2024/05/21 15:36:31 by fneri            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	ft_atoi(char *str)
 	long int	segno;
 	long int	n;
 
+	if (!str)
+		return (0);
 	i = 0;
 	segno = 1;
 	n = 0;
